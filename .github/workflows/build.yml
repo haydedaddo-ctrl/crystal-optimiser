@@ -1,7 +1,11 @@
-name: Build Crystal Optimizer JAR
+name: Build Crystal Optimizer
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      
+main
 
 jobs:
   build:
@@ -9,7 +13,7 @@ jobs:
 
     steps:
       
-name: Download project
+name: Checkout repository
       uses: actions/checkout@v4
 
       
@@ -25,13 +29,12 @@ name: Set up Gradle
 
       
 name: Build mod
-      run: gradle build --no-daemon
+      run: |
+        chmod +x gradlew./gradlew build
 
       
-name: Upload JAR
+name: Upload JAR files
       uses: actions/upload-artifact@v4
       with:
-        name: crystal-optimizer-fabric-jar
+        name: Crystal-Optimizer-JAR
         path: build/libs/*.jar
-
-      
