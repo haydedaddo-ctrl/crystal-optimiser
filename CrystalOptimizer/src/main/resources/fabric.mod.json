@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "id": "crystal_optimizer_custom_hud",
+  "version": "${version}",
+  "name": "Crystal Optimizer \u2014 Custom HUD",
+  "description": "Client-side custom HUD with a locally simulated balance and payment demo; does not alter server money and is not a performance optimizer.",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "com.example.donutfakehud.DonutFakeHud"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.16.0",
+    "minecraft": "~1.21.1",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}
